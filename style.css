@@ -1,0 +1,161 @@
+style.css
+/* General Styles */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #fff9e6;
+    color: #4a3d2f;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.logo {
+    height: 60px;
+    /* Removed the spinLogo animation */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    position: relative;
+}
+
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #4a3d2f;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+/* Added icons on top of the links */
+nav a i {
+    font-size: 30px; /* Adjust the size of icons */
+    margin-bottom: 5px; /* Space between icon and text */
+}
+
+nav a:hover {
+    color: #b8860b;
+}
+
+nav a::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #b8860b;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 0;
+    border-bottom: 2px solid #ffcc00;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+h2 {
+    font-weight: 700;
+    text-align: center;
+    animation: textGlow 2s infinite alternate;
+}
+
+/* Blog Post Styles */
+.blog-post {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-post:hover {
+    transform: scale(1.05);
+}
+
+/* QR Code Styles */
+.qr-code {
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+    animation: pulse 1.5s infinite;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ffcc00;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.icon {
+    margin-right: 8px;
+    animation: bounce 2s infinite;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 5px #b8860b; }
+    to { text-shadow: 0 0 20px #ffcc00; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
